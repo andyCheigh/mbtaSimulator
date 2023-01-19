@@ -1,0 +1,16 @@
+Name: Jae Hyun Cheigh
+
+Threads & Locks Explanation:
+First, I'm making new threads for each passenger. Since passengers' behaviors
+are independent of each other, it makes sense to have separate threads. For
+each passenger, I run a while loop until each of them has arrived at their
+destination.
+
+Then, I'm making new threads for each train. Since trains run independently
+unless a station already has another train, it makes sense to have separate
+threads. In order to solve more-than-one-train-in-a-station problem, I attempted
+to use 'synchronized' so that the the train waits until the next station's train
+has left. But since this was not working, I had to comment the code out.
+
+At the end, I joined all the train threads together as they will be happening
+concurrently.
